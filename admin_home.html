@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Certificate Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar .user-menu {
+            position: relative;
+        }
+
+        .navbar .user-menu img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f4f4f9;
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.addEventListener('click', (e) => {
+            const userMenu = document.querySelector('.user-menu');
+            const dropdown = document.querySelector('.dropdown');
+            if (!userMenu.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MMU NFT Based Certificate Verification System</div>
+        <div class="user-menu">
+            <img src="adminicon.png" alt="User Icon" onclick="toggleDropdown()">
+            <div class="dropdown">
+                <a href="/admin/edit-profile">Edit Profile</a>
+                <a href="/admin/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="form-container">
+            <h2>Upload Certificate Details</h2>
+            <form action="/admin/upload-certificate" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="cert-name">Certificate Name</label>
+                    <input type="text" id="cert-name" name="cert_name" placeholder="Enter Certificate Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" name="student_name" placeholder="Enter Student Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student_id" placeholder="Enter Student ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="pdf-upload">Upload PDF</label>
+                    <input type="file" id="pdf-upload" name="certificate_pdf" accept="application/pdf" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Upload Certificate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
