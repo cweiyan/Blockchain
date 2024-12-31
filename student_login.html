@@ -13,7 +13,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #7c7cf9;
+            background: url('background.jpg') no-repeat center center fixed;
+        background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +23,7 @@
         }
 
         .login-container {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -110,7 +111,7 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <img src="mmu.png" alt="MMU Logo">
+            <img src="mmu2.png" alt="MMU Logo">
             <h1>NFT Based Certificate Verification System</h1>
         </div>
         <form action="/admin/login" method="POST">
