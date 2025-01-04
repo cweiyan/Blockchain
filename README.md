@@ -1,4 +1,4 @@
-# Blockchain
+# Blockchain Asg 
 
 1. Admin Site (Faculty/Administrator)
 Purpose: For managing the issuance, verification, and tracking of certificates.
@@ -28,3 +28,5 @@ b. Public Verification Page:
 Search Bar: Enter certificate ID or student info.
 Verification Result: Display certificate details, blockchain hash, and authenticity status
  
+copy API from remix 
+copy account from remix and paste to .js file

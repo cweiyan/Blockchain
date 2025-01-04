@@ -13,7 +13,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #7c7cf9;
+            background: url('admin.jpg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,7 +23,7 @@
         }
 
         .login-container {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -37,12 +38,14 @@
         }
 
         .login-header img {
-            width: 280px;
-            margin-bottom: 10px;
+            width: 350px; 
+            height: auto; 
+            margin-bottom: 5px;
         }
 
         .login-header h1 {
-            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
             color: #444;
         }
 
@@ -109,13 +112,13 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <img src="mmu.png" alt="MMU Logo">
+            <img src="mmu2.png" alt="MMU Logo">
             <h1>NFT Based Certificate Verification System</h1>
         </div>
         <form action="/admin/login" method="POST">
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="xxx@mmu.edu.my" required>
+                <label for="username">AdminId</label>
+                <input type="text" id="adminId" name="adminId" placeholder="Enter your admin ID" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -124,7 +127,7 @@
             <button type="submit" class="login-btn">Login</button>
         </form>
         <div class="footer">
-            <p>Forgot your password? <a href="/reset-password">Reset here</a></p>
+            <p>© 2024 MULTIMEDIA UNIVERSITY. ALL RIGHTS RESERVED.</p>
         </div>
     </div>
 </body>
